@@ -36,6 +36,7 @@ class DialogСharacteristicQuadrilateral(QtWidgets.QDialog):
             self.parent.quadrilateral = СharacteristicQuadrilateral(self.characteristic_quadrilateral_coordinates)
             if not self.parent.ui.pushButton_3.isEnabled():
                 self.parent.ui.pushButton_3.setEnabled(True)
+            if not self.parent.ui.pushButton_4.isEnabled():
                 self.parent.ui.pushButton_4.setEnabled(True)
             self.close()
 
@@ -89,6 +90,7 @@ class MainWin(QtWidgets.QMainWindow):
         self.fig_list.append(self.current_fig)
         if not self.ui.pushButton_2.isEnabled(): self.ui.pushButton_2.setEnabled(True)
         if (not self.ui.pushButton.isEnabled()) and (len(self.fig_list) > 1): self.ui.pushButton.setEnabled(True)
+        self.ui.pushButton_4.setEnabled(False)
 
     def plot(self):
         py.plot(self.current_fig, "Minimal Surface, based on characteristic quadrilateral")

@@ -25,12 +25,11 @@ class Ui_DialogK(object):
         self.lineEdit.setObjectName("lineEdit")
 
         self.retranslateUi(Dialog)
-        #self.buttonBox.accepted.connect(Dialog.accept)
         self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Input k"))
+        Dialog.setWindowTitle(_translate("Dialog", "Діалог"))
+        self.label.setText(_translate("Dialog", "k = "))
 

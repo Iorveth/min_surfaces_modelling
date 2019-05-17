@@ -4,19 +4,19 @@ import numpy as np
 from scipy.spatial import Delaunay
 
 class СharacteristicQuadrilateral:
-    def __init__(self, coordinates):
-        self.x0 = coordinates[0]
-        self.y0 = coordinates[1]
-        self.z0 = coordinates[2]
-        self.x1 = coordinates[3]
-        self.y1 = coordinates[4]
-        self.z1 = coordinates[5]
-        self.x2 = coordinates[6]
-        self.y2 = coordinates[7]
-        self.z2 = coordinates[8]
-        self.x3 = coordinates[9]
-        self.y3 = coordinates[10]
-        self.z3 = coordinates[11]
+    def __init__(self, a):
+        self.x0 = (a[0] - a[2])*1j
+        self.y0 = a[0] + a[2]
+        self.z0 = -a[1]*1j
+        self.x1 = (a[0]-a[2]-a[3])*1j
+        self.y1 = a[0]+a[2]+a[3]
+        self.z1 = -a[1]*1j
+        self.x2 = (a[0] - a[2] - 2*a[3])*1j
+        self.y2 = a[0] + a[2] + 2*a[3]
+        self.z2 = (a[3] - a[1])*1j
+        self.x3 = (a[0] - a[2] - 2*a[3])*1j
+        self.y3 = a[0] + a[2] + 4*a[3]
+        self.z3 = (3*a[3] - a[1])*1j
 
     def create_trisurf_with_parameters(self, u, v, x, y, z, name):
         points2D = np.vstack([u, v]).T
@@ -54,3 +54,4 @@ class СharacteristicQuadrilateral:
         y = self.quasiconformal_replacement(u, v, k, self.y0,self.y1,self.y2,self.y3)
         z = self.quasiconformal_replacement(u, v, k, self.z0,self.z1,self.z2,self.z3)
         return self.create_trisurf_with_parameters(u, v, x, y, z, name)
+    

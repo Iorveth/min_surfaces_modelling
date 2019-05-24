@@ -51,10 +51,10 @@ class Ui_DialogAnalyticFunction(object):
         self.label_6.setText("")
         self.label_6.setPixmap(QtGui.QPixmap("C:/Users/arsen/Desktop/Screenshot_3.png"))
         self.label_6.setObjectName("label_6")
-
         self.retranslateUi(Dialog)
         self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate

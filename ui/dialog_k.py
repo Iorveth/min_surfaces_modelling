@@ -23,10 +23,10 @@ class Ui_DialogK(object):
         self.lineEdit = QtWidgets.QLineEdit(Dialog)
         self.lineEdit.setGeometry(QtCore.QRect(50, 10, 111, 16))
         self.lineEdit.setObjectName("lineEdit")
-
         self.retranslateUi(Dialog)
         self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
